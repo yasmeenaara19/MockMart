@@ -53,33 +53,40 @@ setInterval(() => {
 }, 1000);
 
 
-// Card slider scroll
+// -----------------------------
+// UNIVERSAL SLIDER FUNCTION
+// -----------------------------
+function createSlider(trackId) {
+  let index = 0;
+  const track = document.getElementById(trackId);
 
-let index = 0;
-const track = document.getElementById("sliderTrack");
+  function scroll(direction) {
+    const card = track.querySelector(".card, .product-card"); 
+    if (!card) return;
 
-function scrollCards(direction) {
-  const cardWidth = track.children[0].offsetWidth + 20; // card + margin
-  index += direction;
-  const maxIndex = track.children.length - 3; // show 3 cards at a time
-  if (index < 0) index = 0;
-  if (index > maxIndex) index = maxIndex;
-  track.style.transform = `translateX(${-index * cardWidth}px)`;
+    const cardWidth = card.offsetWidth + 20; // card + gap
+    index += direction;
+
+    const visibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
+    const maxIndex = track.children.length - visibleCards;
+
+    if (index < 0) index = 0;
+    if (index > maxIndex) index = maxIndex;
+
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
+  }
+
+  return scroll;
 }
 
-// Optional: auto scroll the product list every 3 sec
-const tracks = document.querySelectorAll(".slider-track, #productContainer");
+// -----------------------------
+// CREATE SLIDERS
+// -----------------------------
+const scrollHeadphones = createSlider("sliderTrack");   // Headphones / TV / Fridge
+const scrollQuickPicks = createSlider("productContainer"); // Quick Picks section
 
-tracks.forEach(track => {
-  let scrollAmount = 0;
-  setInterval(() => {
-    if (track.scrollWidth > track.clientWidth) {
-      scrollAmount += 300; // scroll by 300px
-      if (scrollAmount >= track.scrollWidth - track.clientWidth) {
-        scrollAmount = 0; // reset to start
-      }
-      track.scrollTo({ left: scrollAmount, behavior: "smooth" });
-    }
-  }, 3000);
-});
-
+// Example: in HTML
+// <button onclick="scrollHeadphones(-1)">‹</button>
+// <button onclick="scrollHeadphones(1)">›</button>
+// <button onclick="scrollQuickPicks(-1)">‹</button>
+// <button onclick="scrollQuickPicks(1)">›</button>
