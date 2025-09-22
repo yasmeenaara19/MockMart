@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JioMart Mock - FMCG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+   
+<header>
+  <div class="navbar">
+    <!-- Navbar -->
+    <div class="logo"><a href="#">JioMart</a></div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search in Jiomart">
+    </div>
+    <div class="nav-links">
+      <button id="shoppingBtn">☰</button>
+      <a href="#">🛒 Cart</a>
+      <a href="#">👤 Sign In</a>
+    </div>
+  </div>
+
+  <!-- Shopping List Modal -->
+  <div id="shoppingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Shopping List</h2>
+      <p>Search multiple products by entering your shopping list below.</p>
+      
+      <label for="itemList">Enter Item List</label>
+      <input type="text" id="itemList" placeholder="e.g. Milk, Bread, Fruit">
+      <small>Add comma as separator</small>
+      
+      <div class="modal-buttons">
+        <button class="clear-btn">Clear</button>
+        <button class="search-btn">Search All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delivery Location Modal -->
+     <!-- Button to trigger Delivery Modal -->
+        <div class="deli">
+
+  <button id="openModalBtn">Scheduled delivery to: Chennai 600002 ▼</button>
+     <div id="deliveryModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Select Delivery Location</h2>
+      <p>Sign in or set delivery location to see product availability, offers and discounts.</p>
+
+      <button class="signin-btn">Sign In to select address</button>
+
+      <div class="options">
+        <a href="#"><span class="icon">📍</span> Enter a pincode</a>
+        <a href="#"><span class="icon">📡</span> Detect My Location</a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+  
+
+  <div class="container">
+
+  <div class="categories-container">
+    
+    <button onclick="scrollCategory(-1)">&#10094;</button>
+
+
+  <ul class="categories" id="categoryList">
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://m.media-amazon.com/images/I/61zwK7mmLtL.jpg" alt="Mobiles" class="slide active">
+        <img src="https://thumbs.dreamstime.com/b/modern-home-theater-room-interior-flat-screen-tv-angled-perspective-view-53809398.jpg" alt="Mobiles" class="slide">
+        <img src="https://dam.which.co.uk/IC20006-0590-00-front-800x600.jpg" alt="Mobiles" class="slide">
+        <span>Smart Buys</span>
+      </div>
+    </li>
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://dianora.in/wp-content/uploads/2023/02/65-webos-4k-smart-tv-1.png" alt="Mobiles" class="slide active">
+        <img src="https://aws-obg-image-lb-2.tcl.com/content/dam/brandsite/region/in/blog/pc/detail/blog-march/washing-machine-dimensions/banner.jpg" alt="Mobiles" class="slide">
+        <img src="https://cpimg.tistatic.com/7722187/b/1/ladies-modern-gown.jpg" alt="Mobiles" class="slide">
+        <span>Everything Store</span>
+      </div>
+    </li>
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://m.media-amazon.com/images/I/61T7UwjP2fL.jpg" alt="Mobiles" class="slide active">
+        <img src="https://cdn.vectorstock.com/i/1000v/15/55/supermarket-trolley-with-vegetables-vector-18721555.jpg" alt="Mobiles" class="slide">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/3/293691903/LM/WM/DV/27602856/4-layer-rotating-vegetable-kitchen-trolley-500x500.jpeg" alt="Mobiles" class="slide">
+        <span>Everyday Essentials</span>
+      </div>
+    </li>
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://www.dennemeyer.com/fileadmin/a/blog/Everyday_IP_Spreading_the_word_about_mobile_phones/Everyday-IP_Spreading-the-word-about-mobile-phones_12.jpg" alt="Mobiles" class="slide active">
+        <img src="https://assets.nikshanonline.com/wp-content/uploads/2023/10/Mobiles-1-300x193.png" alt="Mobiles" class="slide">
+        <img src="https://blogassets.airtel.in/wp-content/uploads/2024/12/Redmi-Phone.jpg" alt="Mobiles" class="slide">
+        <span>Mobiles</span>
+      </div>
+    </li>
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://www.kidsbee.in/wp-content/uploads/2023/04/kids-boys-dress-buy-online-2.jpg" alt="Mobiles" class="slide active">
+        <img src="https://5.imimg.com/data5/YO/ZT/QA/ANDROID-80655352/ms-1-512-674720-jpg-500x500.jpg" alt="Mobiles" class="slide">
+        <img src="https://5.imimg.com/data5/ANDROID/Default/2020/11/KN/JZ/FH/86900945/1605072025267-jpg-500x500.jpg" alt="Mobiles" class="slide">
+        <span>Fashion</span>
+      </div>
+    </li>
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-free-label-tag-red-ribbon-free-tag-label-red-ribbon-120633474.jpg" alt="Mobiles" class="slide active">
+        <img src="https://static.vecteezy.com/system/resources/previews/044/127/512/non_2x/discount-coupen-filled-shadow-icon-vector.jpg" alt="Mobiles" class="slide">
+        <img src="https://cdn4.iconfinder.com/data/icons/tag-price-sale-label-offer-discount-coupon/512/tag_price_sale_label_offer_discount_coupon_8-512.png" alt="Mobiles" class="slide">
+        <span>Happy Mockmart coupen</span>
+      </div>
+    </li>
+ 
+    <li>
+      <div class="category-item slideshow">
+        <img src="https://i.cdn.newsbytesapp.com/hn/images/l15120220308152024.jpeg" alt="Mobiles" class="slide active">
+        <img src="https://images.news18.com/ibnkhabar/uploads/2023/02/Why-do-prices-end-in-99-16759354363x2.jpg" alt="Mobiles" class="slide">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Bundesstra%C3%9Fe_99_number.svg/1200px-Bundesstra%C3%9Fe_99_number.svg.png" alt="Mobiles" class="slide">
+        <span>99 to 999 Martstore</span>
+      </div>
+    </li>
+ <li>
+      <div class="category-item slideshow">
+        <img src="https://homesofrajasthan.com/wp-content/uploads/2022/11/kingston-tufted-leather-sofa-1-910x1155-1-1.jpg" alt="Mobiles" class="slide active">
+        <img src="https://m.media-amazon.com/images/I/814-SH0+4XL._UF894,1000_QL80_.jpg" alt="Mobiles" class="slide">
+        <img src="https://m.media-amazon.com/images/I/91g5DQKw7KL.jpg" alt="Mobiles" class="slide">
+        <span>Home& Lifestyle mart</span>
+      </div>
+    </li>
+ <li>
+      <div class="category-item slideshow">
+        <!-- NEW badge -->
+    <span class="badge-new">NEW</span>
+
+        <img src="https://content3.jdmagicbox.com/v2/comp/chennai/q1/044pxx44.xx44.150929161320.j6q1/catalogue/the-pot-shop-adyar-chennai-flower-pot-dealers-p4w40f6ebx.jpg" alt="Mobiles" class="slide active">
+        <img src="https://content3.jdmagicbox.com/v2/comp/chennai/q1/044pxx44.xx44.150929161320.j6q1/catalogue/the-pot-shop-adyar-chennai-flower-pot-dealers-4o60kqbhb4.jpg" alt="Mobiles" class="slide">
+        <img src="https://images.jdmagicbox.com/v2/comp/chennai/b8/044pxx44.xx44.190323014054.j8b8/catalogue/the-pot-shop-injambakkam-chennai-plant-nurseries-7fqtziz3lr.jpg" alt="Mobiles" class="slide">
+        <span>Poti Shop</span>
+      </div>
+    </li>
+     <li>
+      <div class="category-item slideshow">
+        <img src="https://static.toiimg.com/thumb/msid-108177902,width-400,resizemode-4/108177902.jpg" alt="Mobiles" class="slide active">
+        <img src="https://static.startuptalky.com/2025/06/Failed-Products-of-Apple-StartupTalky.jpg" alt="Mobiles" class="slide">
+        <img src="https://dam.which.co.uk/IC20006-0590-00-front-800x600.jpg" alt="Mobiles" class="slide">
+        <span>Aphones &more</span>
+      </div>
+    </li>
+ <li>
+      <div class="category-item slideshow">
+        <img src="https://png.pngtree.com/png-clipart/20250111/original/pngtree-shopping-cart-filled-with-groceries-png-image_19085924.png" alt="Mobiles" class="slide active">
+        <img src="https://5.imimg.com/data5/BM/DV/KV/ANDROID-92423289/product-jpeg-500x500.jpg" alt="Mobiles" class="slide">
+        <img src="https://c8.alamy.com/comp/ADAPFJ/groceries-in-shopping-basket-ADAPFJ.jpg" alt="Mobiles" class="slide">
+        <span>Groceries</span>
+      </div>
+    </li>
+ <li>
+      <div class="category-item slideshow">
+        <img src="https://images.jdmagicbox.com/v2/comp/bangalore/b3/080pxx80.xx80.220125231312.r4b3/catalogue/and-store-lulu-global-mall-nagawara-bangalore-women-readymade-garment-retailers-gvz7kjq7yu.jpg" alt="Mobiles" class="slide active">
+        <img src="https://www.luluretail.com/media/o3wct1dm/retail-map-min.svg" alt="Mobiles" class="slide">
+        <img src="https://bangalore.mallsmarket.com/sites/default/files/photos/malls/lulu-global-mall-bengaluru-4.jpg" alt="Mobiles" class="slide">
+        <span>Global mart</span>
+      </div>
+    </li>
+ <li>
+      <div class="category-item slideshow">
+        <!-- NEW badge -->
+    <span class="badge-new">NEW</span>
+
+        <img src="https://content3.jdmagicbox.com/v2/comp/chennai/q1/044pxx44.xx44.150929161320.j6q1/catalogue/the-pot-shop-adyar-chennai-flower-pot-dealers-p4w40f6ebx.jpg" alt="Mobiles" class="slide active">
+        <img src="https://content3.jdmagicbox.com/v2/comp/chennai/q1/044pxx44.xx44.150929161320.j6q1/catalogue/the-pot-shop-adyar-chennai-flower-pot-dealers-4o60kqbhb4.jpg" alt="Mobiles" class="slide">
+        <img src="https://images.jdmagicbox.com/v2/comp/chennai/b8/044pxx44.xx44.190323014054.j8b8/catalogue/the-pot-shop-injambakkam-chennai-plant-nurseries-7fqtziz3lr.jpg" alt="Mobiles" class="slide">
+        <span>Poti Shop</span>
+      </div>
+    </li>
+ <li>
+      <div class="category-item slideshow">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/DairyProductsGermany.jpg/1200px-DairyProductsGermany.jpg" alt="Mobiles" class="slide active">
+        <img src="https://images.squarespace-cdn.com/content/v1/638d8044b6fc77648ebcedba/1736315963026-U88IRCGKBWXBUPHXGQCD/5+Tips+for+Buying+Health+Dairy+Products-f.jpg" alt="Mobiles" class="slide">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/4/406641752/OI/DV/CP/203496834/fresh-cow-milk-500x500.jpg" alt="Mobiles" class="slide">
+        <span>Milkdairy</span>
+      </div>
+    </li>
+ <li>
+   
+
+  </ul> 
+         <button onclick="scrollCategory(1)">&#10095;</button>
+
+
+</div>
+<div class="container">
+          <!-- Card 1 -->
+     <a href="#"> <div class="card3">
+        <img src="images/deli.jpg" alt="">
+
+      <button >Book Now</button>
+          </a>  </div>
+
+          
+  
+  <div class="slider-container">  <div class="carousel-wrapper">
+
+  <!-- Left Arrow -->
+  <button class="arrow arrow-left" onclick="scrollCards(-1)">&#10094;</button>
+  <!-- Sliding Track -->
+
+     <div class="slider-track" id="sliderTrack">
+      <!-- Card 1 -->    
+
+     <a href="#"> <div class="card">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/07/bluetoothheadphones-2048px-0876.jpg" alt="">
+    <div class="card-overlay">
+      <h3>Headphones</h3>
+              <br>₹499
+      <h3>up to 60% off</h3>
+
+      <button >Shop Now</button>
+        </div>
+      </div></a>
+      <div class="slider-track" id="sliderTrack">
+      <!-- Card 1 -->    
+
+     <a href="#"> <div class="card">
+        <img src="https://api.hisense-india.com/media/product-variants/55A6Q-thumb_image_medium-1750839846-4817.png" alt="">
+    <div class="card-overlay">
+      <h3>TV</h3>
+              <h3>₹99,999</h3>
+      <h3>up to 60% off</h3>
+
+      <button >Shop Now</button>
+        </div>
+      </div></a>
+      <div class="slider-track" id="sliderTrack">
+      <!-- Card 1 -->    
+
+     <a href="#"> <div class="card">
+        <img src="https://www.marthastewart.com/thmb/cYjCTvObQJfxJvb0f2UKbmF7eIM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AFI-2-563beba1b24b425793538cc3302743f0.jpg" alt="">
+    <div class="card-overlay">
+      <h3>Kitchen essentials</h3>
+              <br>₹49,999
+      <h3>up to 60% off</h3>
+
+      <button >Shop Now</button>
+        </div>
+      </div></a>
+
+</div>  </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://static.wixstatic.com/media/1bfbc7_7d1b8f3fe41e420ba8201617b53fd833~mv2.png/v1/fill/w_490,h_490,al_c,lg_1,q_85,enc_avif,quality_auto/1bfbc7_7d1b8f3fe41e420ba8201617b53fd833~mv2.png" alt="">
+    <div class="card-overlay">
+      <h3>Refrigerator</h3>
+      <p>₹99999</p>
+      <button>Shop Now</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x150.png?text=Fashion" alt="">
+    <div class="card-overlay">
+      <h3>Headphones</h3>
+      <p>₹499</p>
+      <button>Shop Now</button>
+        </div>
+      </div>
+     
+  <button class="arrow arrow-right" onclick="scrollCards(1)">&#10095;</button>
+</div>  </div>
+
+  <div class="slider2-container">
+    <div class="slider2-track" id="slider2Track">    
+
+      <!-- Card 1 -->
+     <a href="#"> <div class="card2">
+        <img src="https://m.media-amazon.com/images/I/61zwK7mmLtL.jpg" alt="">
+    <div class="card2-overlay">
+      <h3>Headphones</h3>
+            <h3>tea|naamkeen|more</h3>
+
+      <p>₹499</p>
+      <h3>up to 60% off</h3>
+
+      <button >Shop Now</button>
+        </div>
+
+      </div></a>
+
+          </div>
+  <section class="quick-picks">
+    <div class="header">
+      <h2>Quick Picks For Busy Days</h2>
+      <a href="#">View All</a>
+    </div>
+        <div class="carousel-wrapper">
+    <button class="arrow arrow-left" onclick="scrollCards(-1)">&#10094;</button>
+
+
+
+    <div class="product-container" id="productContainer">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71lO2xnJsbL._AC_UL320_.jpg" alt="Vatika Oil">
+        <h3>Dabur New Vatika Enriched Coconut H..</h3>
+        <p class="price">₹389.00</p>
+        <p class="old-price">₹698.00</p>
+        <p class="discount">44% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71E25IzzQPL._AC_UL320_.jpg" alt="Detergent">
+        <h3>Active White Detergent Powder - 10..</h3>
+        <p class="price">₹379.00</p>
+        <p class="old-price">₹500.00</p>
+        <p class="discount">24% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71E25IzzQPL._AC_UL320_.jpg" alt="Detergent">
+        <h3>Active White Detergent Powder - 10..</h3>
+        <p class="price">₹379.00</p>
+        <p class="old-price">₹500.00</p>
+        <p class="discount">24% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71E25IzzQPL._AC_UL320_.jpg" alt="Detergent">
+        <h3>Active White Detergent Powder - 10..</h3>
+        <p class="price">₹379.00</p>
+        <p class="old-price">₹500.00</p>
+        <p class="discount">24% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71E25IzzQPL._AC_UL320_.jpg" alt="Detergent">
+        <h3>Active White Detergent Powder - 10..</h3>
+        <p class="price">₹379.00</p>
+        <p class="old-price">₹500.00</p>
+        <p class="discount">24% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71E25IzzQPL._AC_UL320_.jpg" alt="Detergent">
+        <h3>Active White Detergent Powder - 10..</h3>
+        <p class="price">₹379.00</p>
+        <p class="old-price">₹500.00</p>
+        <p class="discount">24% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+      <div class="product-card">
+        <img src="https://m.media-amazon.com/images/I/71E25IzzQPL._AC_UL320_.jpg" alt="Detergent">
+        <h3>Active White Detergent Powder - 10..</h3>
+        <p class="price">₹379.00</p>
+        <p class="old-price">₹500.00</p>
+        <p class="discount">24% OFF</p>
+        <button class="add-btn">Add</button>
+      </div>
+      
+    <button class="arrow arrow-right" onclick="scrollCards(1)">&#10095;</button>
+
+      <!-- Add more product cards as needed -->
+    </div>
+  </section>
+
+  
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="banner">
+      <img src="images/banner1.jpg" alt="JioMart Offer">
+    </div>
+  </section>
+
+  <!-- Product Sections -->
+  <main>
+    <section class="products">
+      <h2>Groceries</h2>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="images/rice.jpg" alt="Rice">
+          <h3>Basmati Rice</h3>
+          <p>₹599</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="images/oil.jpg" alt="Cooking Oil">
+          <h3>Cooking Oil</h3>
+          <p>₹899</p>
+          <button>Add to Cart</button>
+        </div>
+        <!-- more product cards -->
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>Beverages</h2>
+      <div class="product-grid">
+        <!-- product cards -->
+      </div>
+    </section>
+
+    <section class="products">
+      <h2>Snacks</h2>
+      <div class="product-grid">
+        <!-- product cards -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About JioMart</h4>
+        <ul>
+          <li><a href="#">Company</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Policies</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 JioMart Mock. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+    </div>
+
+</body>
+</html>
