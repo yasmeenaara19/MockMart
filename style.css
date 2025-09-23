@@ -1,9 +1,8 @@
 /* Reset */
 body {
-  margin: 0;
-  background: #f5f5f5;   /* light gray like Jiomart */
-  font-family: Arial, sans-serif;
+  padding-top: 140px; /* adjust = total height of navbar + delivery bar */
 }
+
 
 .container {
   max-width: 1200px;   /* adjust like Jiomart (usually 1200–1400px) */
@@ -17,9 +16,15 @@ body {
 /* Navbar */
 /* Navbar Background */
 header {
-  background: linear-gradient(90deg, #0078ad, #004a75); /* JioMart gradient */
+  position: fixed;   /* fix to top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;     /* keeps it above everything */
+  background: linear-gradient(90deg, #0078ad, #004a75);
   color: #fff;
 }
+
 
 /* Navbar */
 .navbar {
@@ -45,12 +50,14 @@ header {
   align-items: center;
 }
 
-
-.logo::before {
-  content: "🛍️"; /* you can replace with an actual logo img */
+.logo img {
+  width: 30px;   /* adjust logo size */
+  height: auto;
+  vertical-align: middle;
   margin-right: 8px;
-  font-size: 1.5rem;
 }
+
+
 
 /* Search Bar */
 /* Search Bar */
